@@ -2,7 +2,7 @@ use std::io::{Cursor, Read};
 use rodio::{Decoder, OutputStream, Sink};
 use ureq;
 
-fn play_url(url: &str) -> Result<(), Box<dyn std::error::Error>> {
+pub fn play_url(url: &str) -> Result<(), Box<dyn std::error::Error>> {
     // Get the audio data from the network
     let mut response = ureq::get(url).call()?.into_reader();
 
