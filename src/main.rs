@@ -17,7 +17,7 @@ fn main() -> io::Result<()> {
 
     if let Some(url) = yt::get_audio_url(query) {
         println!("\nStreaming from: {}", url);
-        if let Err(e) = player::play_from_url(&url) {
+        if let Err(e) = player::play_url(&url) {
             eprintln!("Error during playback: {}", e);
         }
     } else {
